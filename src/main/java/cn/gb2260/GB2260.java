@@ -14,7 +14,8 @@ public class GB2260 {
     private ArrayList<Division> provinces;
 
     public GB2260() {
-        this(Revision.V2014);
+        //this(Revision.V2014);
+        this(Revision.V2020);
     }
 
     public GB2260(Revision revision) {

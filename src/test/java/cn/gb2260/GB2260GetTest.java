@@ -10,6 +10,7 @@ import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+
 public class GB2260GetTest {
     private static GB2260 gb2260;
 
@@ -26,16 +27,16 @@ public class GB2260GetTest {
         Division data = gb2260.getDivision("110000");
         assertEquals("北京市", data.getName());
         assertEquals("北京市", data.toString());
-        assertEquals(Revision.V2014.getCode(), data.getRevision());
+        assertEquals(Revision.V2020.getCode(), data.getRevision());
         assertEquals("110000", data.getCode());
     }
 
     @Test
     public void testGetPrefecture() {
-        Division data = gb2260.getDivision("110100");
-        assertEquals("市辖区", data.getName());
+        Division data = gb2260.getDivision("110101");
+        assertEquals("东城区", data.getName());
         assertEquals("北京市", data.getProvince());
-        assertEquals("北京市 市辖区", data.toString());
+        assertEquals("北京市 东城区", data.toString());
     }
 
     @Test
@@ -43,8 +44,7 @@ public class GB2260GetTest {
         Division data = gb2260.getDivision("110101");
         assertEquals("东城区", data.getName());
         assertEquals("北京市", data.getProvince());
-        assertEquals("市辖区", data.getPrefecture());
-        assertEquals("北京市 市辖区 东城区", data.toString());
+        assertEquals("北京市 东城区", data.toString());
     }
 
     @Test
